@@ -1,5 +1,11 @@
 class TreasurersController < ApplicationController
 
+	def index
+		@list = Roomate.where(treasurer_id: params[:treasurer_id])
+		
+		render "index.json.jbuilder"
+	end
+
 	def create
 		@treasurer = Treasurer.new(living_space: params[:living_space],
 															 username: params[:username],

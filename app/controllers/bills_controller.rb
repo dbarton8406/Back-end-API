@@ -13,11 +13,11 @@ class BillsController < ApplicationController
 			end
 	end
 
-	def treasurer
-		@bill = Bill.new(name: params[:name], 
+	def create
+		@bill = current_user.bills.new(name: params[:name], 
 										 total_balance: params[:total_balance],
 										 your_balance: params[:your_balance],
-										 company: params[:company], treasurer_id: params[:roomate_id],
+										 company: params[:company], roomate_id: params[:roomate_id],
 										 due_date: params[:due_date])
 			if @bill.save
 				render "t_create.json.jbuilder"
