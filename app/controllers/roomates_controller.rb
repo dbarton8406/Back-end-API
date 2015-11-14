@@ -2,7 +2,6 @@ class RoomatesController < ApplicationController
 
 def index
 		@list = Roomate.where(treasurer_id: params[:treasurer_id])
-		binding.pry
 		render "index.json.jbuilder"
 	end		
 	
