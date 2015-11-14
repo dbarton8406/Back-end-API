@@ -1,0 +1,1 @@
+json.extract! @bill, :name, :total_balance, :your_balance, :company, :treasurer_id, :due_date

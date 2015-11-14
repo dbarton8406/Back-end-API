@@ -15,6 +15,13 @@ class RoomatesController < ApplicationController
 			status: :unprocessable_entity
 		end
 	end
+
+	def login
+		@roomate = Roomate.find_by(username: params[:username])
+		if @roomate && @roomate.authenticate(params[:password])
+		render "show.json.jbuilder", status: :ok
+	  end
+	end
 end
 
 
