@@ -3,4 +3,27 @@ class Roomate < ActiveRecord::Base
 	has_many :bills
 	has_many :posts
 	has_many :comments
+	has_secure_password
+	before_validation :ensure_access_token
+
+	validates_presence_of :username, :password 
+	validates_uniqueness_of :username
+	validates_format_of :email, with: /.+@.+\..+/
+	validates :access_token, presence: true, uniqueness: true
+
+	def ensure_access_token!
+		if self.access_token.blank?
+			self.access_token = Roomate.generate_token
+		end
+	end
+
+	def self.generate_token
+		token = SecureRandom.hex
+		while Roomate.exists?(access_token: token)
+			token = SecureRandom.hex
+		end
+		token
+	end
+
+
 end
