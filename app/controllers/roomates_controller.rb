@@ -1,7 +1,7 @@
 class RoomatesController < ApplicationController
 
 	def create
-		binding.pry
+		
 		@roomate = current_user.roomates.new(living_space: params[:living_space],
 															 username: params[:username],
 															 email: params[:email], 
