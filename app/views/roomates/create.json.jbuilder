@@ -1,0 +1,1 @@
+json.extract! @roomate, :username, :name, :email, :id, :living_space, :admin
