@@ -1,4 +1,6 @@
 == README
+#Authentication
+### The authentication token must be passed in the headers as "access_token"
 
 #Register Treasurers Account
 
@@ -24,7 +26,7 @@ If user was created successfully it will return status code 201
 	"username": "Charlie_1980"
 	"name": "Charles Alderete"
 	"email": "ninja@kittens.com"
-	"auth_token": "......"
+	"access_token": "......"
 	}
 }
 
@@ -58,7 +60,7 @@ Only treasurers can create roomates
 	"username": "Charlie_1980"
 	"name": "Charles Alderete"
 	"email": "ninja@kittens.com"
-	"auth_token": "......"
+	"access_token": "......"
 	}
 }
 
