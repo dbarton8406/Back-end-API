@@ -1,1 +1,1 @@
-json.extract! @treasurer, :username, :name, :email, :id, :living_space, :admin
+json.extract! @treasurer, :username, :name, :email, :id, :living_space, :admin, :access_token

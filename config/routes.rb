@@ -8,7 +8,7 @@ post "/bills/create", to: "bills#create"
 get "/bills/:roomate_id", to: "bills#index"
 
 get "/roomates/:treasurer_id", to: "roomates#index"
-post "roomates/login", to: "roomates#login"
+post "/roomates/login", to: "roomates#login"
 post "/roomates", to: "roomates#create"
 
 
