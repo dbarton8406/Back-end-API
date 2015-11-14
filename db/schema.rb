@@ -50,15 +50,15 @@ ActiveRecord::Schema.define(version: 20151114035224) do
 
   create_table "roomates", force: :cascade do |t|
     t.string   "living_space"
-    t.string   "username",                      null: false
-    t.string   "email",                         null: false
+    t.string   "username",                        null: false
+    t.string   "email",                           null: false
     t.string   "name"
-    t.string   "admin",           default: "f"
+    t.boolean  "admin",           default: false
     t.string   "password_digest"
-    t.string   "access_token",                  null: false
+    t.string   "access_token",                    null: false
     t.integer  "treasurer_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "treasurers", force: :cascade do |t|
