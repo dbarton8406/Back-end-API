@@ -2,7 +2,7 @@ class BillsController < ApplicationController
 
 	def index
 		@bills = Bill.where(treasurer_id: params[:treasurer_id])
-
+		binding.pry
 		render "index.json.jbuilder"
 	end
 	
@@ -12,6 +12,7 @@ class BillsController < ApplicationController
 										 your_balance: params[:your_balance],
 										 company: params[:company], assignee: params[:assignee],
 										 due_date: params[:due_date])
+
 			if @bill.save
 				render "t_create.json.jbuilder"
 			else

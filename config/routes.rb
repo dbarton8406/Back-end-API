@@ -17,7 +17,7 @@ post "/roomates", to: "roomates#create"
 
 
 
-resources :posts
+resources :post
 resources :comments
 
 
