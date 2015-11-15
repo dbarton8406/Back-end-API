@@ -11,6 +11,7 @@ class RoomatesController < ApplicationController
 															 name: params[:name],
 															 password: params[:password])	
 			render "create.json.jbuilder", status: :created
+			@roomate.save
 	end
 
 	def login
