@@ -6,7 +6,9 @@ get "treasurers/:id", to: "treasurers#index"
 
 post "/bills/create", to: "bills#create"
 get "/bills/:treasurer_id", to: "bills#index"
-put "/bills/update", to: "bills#update"
+get "bills/assignee/:assignee", to: "bills#assignee"
+get "/bills/bill/:id", to: "bills#show"
+put "/bills/:id", to: "bills#update"
 
 
 get "/roomates/:treasurer_id", to: "roomates#index"

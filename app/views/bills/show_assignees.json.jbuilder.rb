@@ -21,7 +21,7 @@ class BillsController < ApplicationController
 		end
 
 		def assignee
-			@bills = Bill.where(assignee: params[:assignee])
+			@bill = Bill.where(assignee: params[:assignee])
 			render "search.json.jbuilder"
 		end
 
@@ -36,8 +36,7 @@ class BillsController < ApplicationController
 									 your_balance: params[:your_balance],
 									 company: params[:company],
 									 treasurer_id: params[:treasures],
-									 due_date: params[:due_date], 
-									 paid: params[:paid],
+									 due_date: params[:due_date], paid: params[:paid],
 									 assignee: params[:assignee])
 		end
 
