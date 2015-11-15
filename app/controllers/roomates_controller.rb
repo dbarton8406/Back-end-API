@@ -21,6 +21,11 @@ class RoomatesController < ApplicationController
 	  end
 	end
 
+	def destroy
+		@roomate = Roomate.find_by(id: params[:id])
+		@roomate.destroy
+	render json: {message: "#{@roomate.name} has been evicted"}, status: :ok
+	end
 end
 
 
