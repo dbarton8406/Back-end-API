@@ -2,7 +2,6 @@ class BillsController < ApplicationController
 
 	def index
 		@bills = Bill.where(treasurer_id: params[:treasurer_id])
-		binding.pry
 		render "index.json.jbuilder"
 	end
 	
