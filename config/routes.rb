@@ -5,7 +5,9 @@ post "/treasurers/login", to: "treasurers#login"
 get "treasurers/:id", to: "treasurers#index"
 
 post "/bills/create", to: "bills#create"
-get "/bills/:roomate_id", to: "bills#index"
+get "/bills/:treasurer_id", to: "bills#index"
+put "/bills/update", to: "bills#update"
+
 
 get "/roomates/:treasurer_id", to: "roomates#index"
 post "/roomates/login", to: "roomates#login"

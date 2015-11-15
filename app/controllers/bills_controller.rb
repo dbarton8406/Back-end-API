@@ -1,8 +1,12 @@
 class BillsController < ApplicationController
 
-
-	def create
-		
+	def index
+		@bills = Bill.where(treasurer_id: params[:treasurer_id])
+	
+		render "index.json.jbuilder"
+	end
+	
+	def create	
 		@bill = current_user.bills.new(name: params[:name], 
 										 total_balance: params[:total_balance],
 										 your_balance: params[:your_balance],
@@ -15,4 +19,16 @@ class BillsController < ApplicationController
 				status: :unprocessable_entity
 			end
 		end
+
+		#def update
+		#	@bill = Bill.where(id: params [:id])
+		#	@bill.update(name: params[:name] )
+		#end
+
 end
+
+
+
+
+
+

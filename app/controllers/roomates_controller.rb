@@ -1,12 +1,9 @@
 class RoomatesController < ApplicationController
 
-def index
-	
+	def index
 		@list = Roomate.where(treasurer_id: params[:treasurer_id])
 		render "index.json.jbuilder"
-	end		
-	
-		
+	end
 	def create
 		@roomate = current_user.roomates.new(living_space: params[:living_space],
 															 username: params[:username],
