@@ -33,7 +33,17 @@ class BillsController < ApplicationController
 		def update
 			@bill = Bill.find_by(id: params[:id])
 			
-			@bill.update(name: params[:name])
+			@bill.update(name: params[:name],
+									 total_balance: params[:total_balance],
+									 due_date: params[:due_date],
+									 paid: params)
+			render json: {message: "#{@bill.name} has been updated"}, status: :ok
+		end
+
+		def destroy
+			@bill = Bill.find_by(id: params[:id])
+			@bill.destroy
+		render json: {message: "#{@bill.name} has been deleted"}, status: :ok
 		end
 
 end

@@ -1,12 +1,7 @@
 class TreasurersController < ApplicationController
 
-	def index
-		@list = Roomate.where(treasurer_id: params[:treasurer_id])
 		
-		render "index.json.jbuilder"
-	end
-
-	def create
+		def create
 		@treasurer = Treasurer.new(living_space: params[:living_space],
 															 username: params[:username],
 															 email: params[:email], 
@@ -28,5 +23,12 @@ class TreasurersController < ApplicationController
 			render json: {error: "Could not find user for #{params[:username]} or wrong password." },
 			status: :unauthorized
 		end
+
+		def destroy
+			@treasurer Treasurer.find_by(id: params[:id])
+			@treasurer.destroy
+			render json: {message: "#{@treasurer} has been deleted"}, status: :ok
+		end
+
 	end
 end
