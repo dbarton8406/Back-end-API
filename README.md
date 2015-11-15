@@ -75,7 +75,7 @@ If the roomate could not be created you should receive status code 422 and
 
 ##POST/bills/create
 
-Both treasurers and roomates can create bills
+Only treasurers can create bills
 
 **Params**
 
@@ -100,7 +100,7 @@ If bill is created you will receive a status code 201 and
 	"treasurer_id": "1"
 	"due_date": "2012-03-27 23:53:38 UTC"
 	}
-
+```
 #Edit Bills
 
 ## PUT /bills/:id
