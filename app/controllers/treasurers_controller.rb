@@ -24,11 +24,11 @@ class TreasurersController < ApplicationController
 			status: :unauthorized
 		end
 
-		def destroy
-			@treasurer Treasurer.find_by(id: params[:id])
-			@treasurer.destroy
-			render json: {message: "#{@treasurer} has been deleted"}, status: :ok
-		end
+		#def destroy
+		#	@treasurer = Treasurer.find_by(id: params[:id])
+		#	@treasurer.destroy
+		#	render json: {message: "#{@treasurer} has been deleted"}, status: :ok
+		#end
 
 	end
 end
