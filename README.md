@@ -120,7 +120,7 @@ If bill is created you will receive a status code 201 and
 
 **Params**
 
-`treasurer_id` The id of the treasurer the roomate is associated with `integer`
+`treasurer_id:` The id of the treasurer the roomate is associated with `integer:`
 
 ###This will return an array of hashes
 
@@ -150,7 +150,7 @@ There are 3 methods to search for bills
 
 **Params**
 
-`treasurer_id` The id of the person whos name is on the bill `integer` and it will return an array of hashes
+`treasurer_id:` The id of the person whos name is on the bill `integer` and it will return an array of hashes
 ```
 [
   {
@@ -180,9 +180,9 @@ There are 3 methods to search for bills
 
 **Params**
 
-`assignee` The person whos bills you wish to search for
+`assignee:` The person whos bills you wish to search for
 
-This will return all bills by the `assignee` param
+This will return all bills by the `assignee:` param
 
 ## GET /bills/bill/:id
 
@@ -193,7 +193,3 @@ This will return all bills by the `assignee` param
 This will return json of an indivdual bill
 
 
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
